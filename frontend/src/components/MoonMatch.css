@@ -1,0 +1,139 @@
+
+.moon-match {
+  width: 100%;
+  max-width: 850px;
+  margin: 45px auto;
+  padding: 30px 20px;
+  text-align: center;
+  color: #f7efff;
+  background: linear-gradient(145deg, #17132f, #30234e);
+  border: 1px solid rgba(210, 180, 255, 0.25);
+  border-radius: 24px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.moon-match h2 {
+  margin: 12px 0;
+  color: #f4d9ff;
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+}
+
+.moon-match > p {
+  color: #d0c2e7;
+  line-height: 1.7;
+}
+
+.moon-match-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.moon-match-stats span {
+  padding: 10px 14px;
+  color: #f7edff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(220, 190, 255, 0.18);
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.moon-match-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.moon-match-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 8px;
+  color: #f8eaff;
+  font-size: clamp(1.8rem, 5vw, 2.7rem);
+  background: linear-gradient(145deg, #6b5596, #493568);
+  border: 1px solid rgba(231, 210, 255, 0.4);
+  border-radius: 17px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.moon-match-card:not(:disabled):hover {
+  transform: translateY(-4px) scale(1.03);
+  background: linear-gradient(145deg, #8870b8, #604582);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.moon-match-card.revealed {
+  background: linear-gradient(145deg, #f1dcff, #d7c2fa);
+  border-color: #f8eaff;
+}
+
+.moon-match-card.matched {
+  background: linear-gradient(145deg, #c9f0dc, #a6dfc5);
+  border-color: #c5ffe2;
+  cursor: default;
+}
+
+.moon-match-win {
+  margin: 25px auto 10px;
+  padding: 18px;
+  background: rgba(180, 240, 211, 0.1);
+  border: 1px solid rgba(180, 240, 211, 0.35);
+  border-radius: 16px;
+}
+
+.moon-match-win h3 {
+  margin: 0 0 8px;
+  color: #d2ffe8;
+  font-size: 1.3rem;
+}
+
+.moon-match-win p {
+  margin: 0;
+  color: #e1d7f1;
+  line-height: 1.6;
+}
+
+.moon-match-restart {
+  margin-top: 24px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+@media (max-width: 600px) {
+  .moon-match {
+    margin: 30px auto;
+    padding: 24px 12px;
+    border-radius: 18px;
+  }
+
+  .moon-match-grid {
+    gap: 9px;
+  }
+
+  .moon-match-card {
+    border-radius: 12px;
+  }
+
+  .moon-match-stats {
+    gap: 7px;
+  }
+
+  .moon-match-stats span {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+}

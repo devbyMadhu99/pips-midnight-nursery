@@ -1,0 +1,77 @@
+
+.pip-pet {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.pip-pet-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 24px auto 12px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle, #49386b, #201a38);
+  border: 2px solid #bca4ef;
+  font-size: 64px;
+  box-shadow: 0 0 28px #a98af455;
+}
+
+.pip-pet-stats {
+  max-width: 420px;
+  margin: 24px auto;
+  display: grid;
+  gap: 16px;
+  text-align: left;
+}
+
+.pip-pet-stat-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  color: #e1d7f1;
+  font-size: 14px;
+}
+
+.pip-pet-bar {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #302744;
+}
+
+.pip-pet-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #a98af4, #f0b9df);
+  transition: width 0.3s ease;
+}
+
+.pip-pet-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.pip-pet-actions button {
+  padding: 12px 20px;
+  border: 1px solid #a98af4;
+  border-radius: 14px;
+  background: #302448;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.pip-pet-actions button:hover {
+  background: #493665;
+  transform: translateY(-2px);
+}
+
+.pip-pet-actions button:focus-visible {
+  outline: 2px solid #f0b9df;
+  outline-offset: 3px;
+}

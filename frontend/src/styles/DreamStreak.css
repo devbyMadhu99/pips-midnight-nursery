@@ -1,0 +1,59 @@
+
+.dream-streak {
+  text-align: center;
+}
+
+.streak-card {
+  max-width: 600px;
+  margin: 28px auto;
+  padding: 30px 20px;
+  border: 1px solid rgba(190, 160, 255, 0.4);
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(190, 160, 255, 0.16),
+    rgba(255, 143, 189, 0.1)
+  );
+  overflow-wrap: anywhere;
+}
+
+.streak-icon {
+  font-size: 2.8rem;
+}
+
+.streak-card h2 {
+  margin: 16px 0;
+}
+
+.streak-card h2 span {
+  opacity: 0.8;
+}
+
+.streak-number {
+  margin: 20px 0 10px;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 800;
+}
+
+.streak-number span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.streak-card p {
+  line-height: 1.8;
+}
+
+.best-streak {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: 1px solid rgba(190, 160, 255, 0.3);
+  border-radius: 20px;
+}
+
+@media (max-width: 640px) {
+  .streak-card {
+    padding: 24px 16px;
+  }
+}

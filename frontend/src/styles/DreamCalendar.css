@@ -1,0 +1,119 @@
+
+.dream-calendar {
+  text-align: center;
+}
+
+.calendar-card {
+  max-width: 600px;
+  margin: 28px auto;
+  padding: 24px;
+  border: 1px solid rgba(190, 160, 255, 0.35);
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(190, 160, 255, 0.12),
+    rgba(255, 143, 189, 0.08)
+  );
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.calendar-header h3 {
+  margin: 0;
+}
+
+.calendar-header button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(190, 160, 255, 0.4);
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.calendar-weekday {
+  padding: 8px 0;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.calendar-day {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  border: 1px solid rgba(190, 160, 255, 0.12);
+  border-radius: 12px;
+}
+
+.calendar-day.has-dream {
+  border-color: rgba(190, 160, 255, 0.65);
+  background: rgba(190, 160, 255, 0.2);
+}
+
+.calendar-day.is-today {
+  outline: 2px solid #bea0ff;
+  outline-offset: 1px;
+}
+
+.calendar-sparkle {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  font-size: 0.65rem;
+}
+
+.calendar-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 22px 0 0;
+  font-size: 0.85rem;
+}
+
+.calendar-legend > span:first-child {
+  color: #bea0ff;
+}
+
+.today-dot {
+  width: 10px;
+  height: 10px;
+  margin-left: 12px;
+  border: 2px solid #bea0ff;
+  border-radius: 50%;
+}
+
+@media (max-width: 480px) {
+  .calendar-card {
+    padding: 14px 10px;
+  }
+
+  .calendar-grid {
+    gap: 4px;
+  }
+
+  .calendar-day {
+    min-height: 38px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+
+  .calendar-weekday {
+    font-size: 0.7rem;
+  }
+}

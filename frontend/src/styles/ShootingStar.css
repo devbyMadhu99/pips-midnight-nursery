@@ -1,0 +1,173 @@
+
+.shooting-wish {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.shooting-wish h2 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.15;
+  color: #fff0ff;
+}
+
+.shooting-wish h2 span {
+  color: #c7a6ff;
+}
+
+.shooting-wish > p {
+  color: #d1c4e7;
+  line-height: 1.8;
+}
+
+.shooting-sky {
+  position: relative;
+  width: min(100%, 600px);
+  height: 240px;
+  margin: 30px auto;
+  overflow: hidden;
+  border: 1px solid rgba(205, 174, 255, 0.25);
+  border-radius: 25px;
+  background:
+    radial-gradient(ellipse at 50% 100%, #35275f 0%, transparent 65%),
+    linear-gradient(145deg, #17152f, #10172e);
+}
+
+.wish-moon {
+  position: absolute;
+  top: 22px;
+  right: 35px;
+  font-size: 38px;
+  color: #ffe8ac;
+  text-shadow: 0 0 20px #ffe8ac;
+}
+
+.wish-star {
+  position: absolute;
+  color: #ffe8bd;
+  text-shadow: 0 0 15px #d6b5ff;
+  animation: wish-twinkle 2s infinite alternate;
+}
+
+.wish-star-one {
+  top: 28%;
+  left: 20%;
+  font-size: 24px;
+}
+
+.wish-star-two {
+  top: 60%;
+  left: 40%;
+  font-size: 30px;
+}
+
+.wish-star-three {
+  top: 22%;
+  left: 70%;
+  font-size: 20px;
+}
+
+.shooting-comet {
+  position: absolute;
+  top: 35%;
+  left: 12%;
+  color: #fff4cf;
+  font-size: 30px;
+  opacity: 0;
+  text-shadow: 0 0 15px #fff, 0 0 30px #c9a5ff;
+}
+
+.shooting-comet::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 3px;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%) rotate(-25deg);
+  transform-origin: right;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+.wish-launched .shooting-comet {
+  animation: comet-launch 1.3s ease-out forwards;
+}
+
+.wish-message {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  color: #f6dcff;
+  white-space: nowrap;
+  animation: wish-appear 0.5s ease-out;
+}
+
+.shooting-button {
+  padding: 14px 25px;
+  border: 1px solid rgba(255, 226, 255, 0.6);
+  border-radius: 999px;
+  background: linear-gradient(110deg, #f4c7ff, #c6b4ff, #b8e7ff);
+  color: #261938;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.shooting-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(194, 151, 255, 0.4);
+}
+
+@keyframes comet-launch {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(-25deg);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(420px, 170px) rotate(-25deg);
+  }
+}
+
+@keyframes wish-twinkle {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+@keyframes wish-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .shooting-sky {
+    height: 200px;
+  }
+
+  @keyframes comet-launch {
+    0% {
+      opacity: 0;
+      transform: translate(0, 0) rotate(-25deg);
+    }
+    15% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: translate(230px, 140px) rotate(-25deg);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wish-star {
+    animation: none;
+  }
+
+  .shooting-comet {
+    animation-duration: 0.01ms !important;
+  }
+}

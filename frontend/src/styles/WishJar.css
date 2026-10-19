@@ -1,0 +1,317 @@
+
+.wish-section {
+  text-align: center;
+}
+
+.wish-intro {
+  max-width: 560px;
+  margin: 18px auto 34px;
+  line-height: 1.8;
+  color: var(--muted, #b8b0c9);
+}
+
+.wish-jar-card {
+  width: min(100%, 680px);
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid rgba(231, 190, 255, 0.22);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 18px 60px rgba(10, 5, 30, 0.18);
+  text-align: left;
+}
+
+.wish-jar-art {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 190px;
+  margin-bottom: 26px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: radial-gradient(
+    circle at 50% 60%,
+    rgba(186, 139, 255, 0.18),
+    transparent 65%
+  );
+}
+
+.jar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  width: 110px;
+  height: 115px;
+  padding: 22px 12px 10px;
+  border: 2px solid rgba(231, 190, 255, 0.8);
+  border-radius: 20px 20px 28px 28px;
+  background: linear-gradient(
+    140deg,
+    rgba(255, 204, 236, 0.28),
+    rgba(144, 119, 255, 0.15)
+  );
+  box-shadow: 0 0 35px rgba(210, 155, 255, 0.18);
+  color: #ffe4a8;
+  font-size: 22px;
+  animation: wish-jar-float 3s ease-in-out infinite;
+}
+
+.jar span:nth-child(even) {
+  color: #ffd1e8;
+}
+
+.jar-lid {
+  position: relative;
+  z-index: 2;
+  width: 74px;
+  height: 13px;
+  margin-bottom: -2px;
+  border: 2px solid #e8c9ff;
+  border-radius: 6px;
+  background: #a58bcb;
+}
+
+.wish-star,
+.wish-orbit {
+  position: absolute;
+  color: #ffe4a8;
+  animation: wish-twinkle 2s ease-in-out infinite alternate;
+}
+
+.wish-orbit {
+  top: 25px;
+  right: 25%;
+  font-size: 25px;
+}
+
+.star-one {
+  top: 30px;
+  left: 28%;
+  font-size: 22px;
+}
+
+.star-two {
+  top: 80px;
+  right: 24%;
+  font-size: 18px;
+  animation-delay: 0.5s;
+}
+
+.star-three {
+  bottom: 22px;
+  left: 31%;
+  font-size: 18px;
+  animation-delay: 0.8s;
+}
+
+.wish-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wish-form label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.wish-form textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 15px;
+  resize: vertical;
+  border: 1px solid rgba(231, 190, 255, 0.28);
+  border-radius: 14px;
+  outline: none;
+  background: rgba(10, 8, 30, 0.3);
+  color: inherit;
+  font: inherit;
+  line-height: 1.6;
+}
+
+.wish-form textarea:focus-visible {
+  border-color: #e9b7ff;
+  box-shadow: 0 0 0 3px rgba(233, 183, 255, 0.14);
+}
+
+.wish-form textarea::placeholder {
+  color: #a9a0bb;
+}
+
+.wish-form-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted, #b8b0c9);
+  font-size: 11px;
+}
+
+.wish-submit {
+  align-self: flex-start;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.wish-message {
+  min-height: 24px;
+  margin: 2px 0 8px;
+  color: #f5cce6;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.wish-saved-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(231, 190, 255, 0.16);
+}
+
+.wish-saved-heading h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+}
+
+.wish-saved-heading p {
+  margin: 0;
+  color: var(--muted, #b8b0c9);
+  font-size: 12px;
+}
+
+.wish-toggle,
+.wish-release {
+  border: 1px solid rgba(231, 190, 255, 0.28);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.wish-toggle {
+  padding: 9px 13px;
+  font: inherit;
+  font-size: 12px;
+}
+
+.wish-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.wish-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid rgba(231, 190, 255, 0.14);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.wish-item-star {
+  color: #ffe4a8;
+  font-size: 20px;
+}
+
+.wish-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.wish-item-content p {
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+.wish-item-content small {
+  color: var(--muted, #b8b0c9);
+  font-size: 11px;
+}
+
+.wish-release {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  font-size: 20px;
+}
+
+.wish-empty {
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+  color: var(--muted, #b8b0c9);
+  font-size: 13px;
+}
+
+.wish-footnote {
+  max-width: 500px;
+  margin: 18px auto 0;
+  color: var(--muted, #b8b0c9);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+@keyframes wish-jar-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes wish-twinkle {
+  from {
+    opacity: 0.45;
+    transform: scale(0.85) rotate(-8deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.15) rotate(8deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .wish-jar-card {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .wish-jar-art {
+    min-height: 165px;
+  }
+
+  .wish-saved-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .wish-submit {
+    width: 100%;
+    text-align: center;
+  }
+
+  .wish-form-meta {
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jar,
+  .wish-star,
+  .wish-orbit {
+    animation: none;
+  }
+}
