@@ -2,7 +2,7 @@
 import "../styles/DreamJournal.css";
 import { useEffect, useState } from "react";
 
-const API_URL = "http://localhost:5000/api/dreams";
+const API_URL = "https://pips-midnight-nursery-1.onrender.com/api/dreams";
 
 const STORAGE_KEY = "pips-midnight-dream-journal";
 const MIGRATION_KEY = "pips-dreams-migrated";
