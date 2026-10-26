@@ -84,19 +84,32 @@ app.patch("/api/dreams/:id", async (req, res) => {
 });
 
 // Delete a dream
+
+ // Delete a dream
 app.delete("/api/dreams/:id", async (req, res) => {
   try {
-    const dream = await Dream.findByIdAndDelete(req.params.id);
+    const { id } = req.params;
 
-    if (!dream) {
-      return res.status(404).json({ message: "Dream not found" });
+    if (!mongoose.isValidObjectId(id)) {
+      return res.status(400).json({ message: "Invalid dream ID" });
     }
 
-    res.json({ message: "Dream deleted successfully" });
+    const dream = await Dream.findByIdAndDelete(id);
+
+    if (!dream) {
+      return res.status(404).json({ message: "Dream not found in database" });
+    }
+
+    return res.status(200).json({
+      message: "Dream deleted successfully",
+      id: dream._id,
+    });
   } catch (error) {
-    res.status(500).json({ message: "Failed to delete dream" });
+    console.error("Failed to delete dream:", error.message);
+    return res.status(500).json({ message: "Failed to delete dream" });
   }
 });
+
 
 
 const PORT = process.env.PORT || 5000;
